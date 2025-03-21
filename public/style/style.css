@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 5vh;
+}
+
+.numberbox {
+  width: 20vw;
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid white;
+  background-color: gray;
+  border-right: 1px solid white;
+}
+
+.blueteam {
+  width: 40vw;
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  background-color: rgba(0, 0, 255, 0.57);
+}
+
+.redteam {
+  width: 40vw;
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid white;
+  border-right: 1px solid white;
+  background-color: rgba(255, 0, 0, 0.57);
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+  width: 100vw;
+  height: 95vh;
+}
+
+section:nth-of-type(1) {
+  width: 20vw;
+  height: 95vh;
+  background-color: gray;
+  border-right: 1px solid white;
+
+}
+
+section:nth-of-type(2) {
+  display: flex;
+  flex-direction: row;
+  width: 40vw;
+  height: 95vh;
+  background-color: rgba(0, 0, 255, 0.57);
+}
+
+section:nth-of-type(3) {
+  display: flex;
+  flex-direction: row;
+  width: 40vw;
+  height: 95vh;
+  background-color: rgba(255, 0, 0, 0.57);
+}
+
+.banpick {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.blueban, .bluepick, .redban, .redpick {
+  height: 95vh;
+  text-align: center;
+  color: white;
+  width: 50%;
+  border-right: 1px solid white;
+}
+
+.list {
+  border-bottom: 1px solid white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.champion {
+  font-size: 0.8vmax;
+  color: white;
+}
