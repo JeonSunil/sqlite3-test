@@ -85,11 +85,28 @@ section:nth-of-type(3) {
 .list {
   border-bottom: 1px solid white;
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.numberList {
+  border-bottom: 1px solid white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  cursor: pointer;
+}
+
+.numberList:hover {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .champion {
   font-size: 0.8vmax;
   color: white;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 5px;
+  padding: 5px;
+  box-shadow: rgb(0, 0, 0) 0px 0px 5px;
 }

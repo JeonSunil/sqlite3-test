@@ -1,6 +1,8 @@
 const express = require('express');
 const sqlite3 = require('sqlite3').verbose();
 const qs = require('querystring');
+const fs = require('fs');
+
 
 const router = express.Router();
 const db = new sqlite3.Database('./mydb.db', (err) => {
@@ -29,7 +31,7 @@ router.get('/:id', (req, res) => {
       return res.status(500).json({ error: err.message });
     }
     if (row) {
-      res.json(row);
+      res.redirect('/');
     } else {
       res.status(404).json({ message: `${id}를 찾을 수 없어요.` });
     }
@@ -59,12 +61,16 @@ router.put('/:id', (req, res) => {
 });
 
 router.delete('/:id', (req, res) => {
-  const { id } = req.params;
+  const { id } = req.params; 
   db.run("DELETE FROM banpick WHERE id = ?", [id], function(err) {
     if (err) {
-      return console.log(err.message);
+      return res.status(500).send({ error: err.message });
     }
-    res.send({ changes: this.changes });
+    if (id > 0) {
+      res.send({ success: true, message: '삭제 성공' });
+    } else {
+      res.status(404).send({ success: false, message: '삭제할 데이터를 찾을 수 없습니다.' });
+    }
   });
 });
 
